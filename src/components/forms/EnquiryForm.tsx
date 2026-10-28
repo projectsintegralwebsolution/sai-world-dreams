@@ -249,10 +249,10 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
                   }`}
                 >
                   <option value="Not Decided">Select Configuration (or Not Decided)</option>
-                  <option value="1 BHK">1 BHK Luxury Home (Tower Vista, Breeze)</option>
-                  <option value="2 BHK">2 BHK Luxury Home (Tower Castle, Vista, Breeze)</option>
-                  <option value="2.5 BHK">2.5 BHK Luxury Home (Tower Vista)</option>
-                  <option value="3 BHK">3 BHK Luxury Home (Tower Castle, Mist, Spring)</option>
+                  <option value="1 BHK">1 BHK Luxury Home</option>
+                  <option value="2 BHK">2 BHK Luxury Home</option>
+                  <option value="2.5 BHK">2.5 BHK Luxury Home</option>
+                  <option value="3 BHK">3 BHK Luxury Home</option>
                 </select>
                 {errors.interestedIn && (
                   <p className="text-[11px] text-red-600 mt-0.5">{errors.interestedIn.message}</p>
@@ -340,10 +340,10 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
                 }`}
               >
                 <option value="Not Decided">Select Configuration (or Not Decided)</option>
-                <option value="1 BHK">1 BHK Luxury Home (Tower Vista, Breeze)</option>
-                <option value="2 BHK">2 BHK Luxury Home (Tower Castle, Vista, Breeze)</option>
-                <option value="2.5 BHK">2.5 BHK Luxury Home (Tower Vista)</option>
-                <option value="3 BHK">3 BHK Luxury Home (Tower Castle, Mist, Spring)</option>
+                <option value="1 BHK">1 BHK Luxury Home</option>
+                <option value="2 BHK">2 BHK Luxury Home</option>
+                <option value="2.5 BHK">2.5 BHK Luxury Home</option>
+                <option value="3 BHK">3 BHK Luxury Home</option>
               </select>
               {errors.interestedIn && (
                 <p className="text-[11px] text-red-600 mt-1">{errors.interestedIn.message}</p>
