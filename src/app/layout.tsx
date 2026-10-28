@@ -55,7 +55,6 @@ export const metadata: Metadata = {
       'Experience 1, 2, 2.5 & 3 BHK luxury homes with 60+ world-class amenities at Sai World Dreams, Dombivli. MahaRERA P51700035191.',
     images: ['/images/hero/hero-slide-2.webp'],
   },
-<<<<<<< HEAD
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -64,11 +63,10 @@ export const metadata: Metadata = {
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
-=======
->>>>>>> origin/main
   robots: {
     index: true,
     follow: true,
