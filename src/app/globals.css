@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-manrope: 'Manrope', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Standardized Inner Page Banner Dimensions */
+  --inner-banner-height-desktop: 440px;
+  --inner-banner-height-tablet: 400px;
+  --inner-banner-height-mobile: 360px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-inter);
+}
+
+body {
+  color: #1F2937;
+  background-color: #FDFBF7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07132B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DFBF7D;
+}
+
+/* Subtle gold shimmer effect */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #DFBF7D 0%, #C5A059 50%, #9F7E3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #DFBF7D 0%, #C5A059 50%, #9F7E3B 100%);
+}
+
+.gold-border {
+  border-color: #C5A059;
+}
+
+.bg-pattern {
+  background-image: radial-gradient(rgba(197, 160, 89, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle, Elegant Animations for Left Promotional Panel */
+@keyframes shimmer-beam {
+  0% {
+    transform: translateX(-150%);
+  }
+  35%, 100% {
+    transform: translateX(250%);
+  }
+}
+
+@keyframes gold-border-pulse {
+  0%, 100% {
+    border-color: rgba(223, 191, 125, 0.7);
+  }
+  50% {
+    border-color: rgba(223, 191, 125, 1);
+  }
+}
+
+@keyframes subtle-soft-pulse {
+  0%, 100% {
+    opacity: 0.96;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-shimmer-beam {
+  animation: shimmer-beam 5.5s ease-in-out infinite;
+}
+
+.animate-gold-pulse {
+  animation: gold-border-pulse 6.5s ease-in-out infinite;
+}
+
+.animate-soft-pulse {
+  animation: subtle-soft-pulse 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-shimmer-beam,
+  .animate-gold-pulse,
+  .animate-soft-pulse {
+    animation: none !important;
+  }
+}
+
+/* Ensure all banners, cards, images, and card containers are flat, sharp and free of unwanted box-shadows or drop-shadows */
+img,
+picture,
+video,
+canvas {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+[data-image-wrapper],
+.aspect-\[4\/5\],
+.aspect-\[4\/3\],
+.aspect-\[16\/10\],
+.aspect-\[16\/11\],
+.aspect-\[21\/9\],
+.aspect-\[21\/10\] {
+  box-shadow: none !important;
+}
+
+/* Clean, flat presentation for all cards, banners, and promotional wrappers across homepage and inner pages */
+.card,
+[class*="rounded-xl"],
+[class*="rounded-2xl"],
+[class*="rounded-lg"] {
+  box-shadow: none;
+}
+
+/* Standardized Inner-Page Banner Height & Alignment (Excludes Homepage Hero Slider) */
+.inner-page-banner {
+  min-height: var(--inner-banner-height-mobile);
+}
+
+@media (min-width: 768px) {
+  .inner-page-banner {
+    min-height: var(--inner-banner-height-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner-page-banner {
+    min-height: var(--inner-banner-height-desktop);
+  }
+}
