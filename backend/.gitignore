@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# TypeScript Build Output
+dist/
+*.tsbuildinfo
+
+# Environment & Secrets
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+.env.local
+
+# Preserve Environment Example
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Database (Completely Stateless Application)
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db

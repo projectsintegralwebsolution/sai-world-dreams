@@ -1,0 +1,88 @@
+# ==============================================================================
+# Sai World Dreams — Git Exclusion Rules (.gitignore)
+# ==============================================================================
+
+# Dependencies
+node_modules/
+*/node_modules/
+.pnp
+.pnp.js
+
+# Next.js Build Outputs & Caches
+.next/
+out/
+build/
+dist/
+backend/dist/
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Environment & Secrets (NEVER COMMIT ACTUAL SECRETS)
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+.env.local
+backend/.env
+backend/.env*.local
+backend/.env.development
+backend/.env.test
+backend/.env.production
+backend/.env.local
+
+# Preserve Environment Example Templates Only
+!.env.example
+!backend/.env.example
+
+# Temporary Scratch, Extraction & Conversion Directories
+scratch/
+scratch_extract/
+extracted_assets/
+extracted_zip/
+
+# Debug and Process Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Database & SQLite Files (Completely Stateless Application)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Operating System & Local Editor Artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Security Credentials, Keys & Certificates
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
