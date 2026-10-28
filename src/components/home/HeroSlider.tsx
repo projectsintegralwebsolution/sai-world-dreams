@@ -183,7 +183,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEnquiry }) => {
 
   return (
     <div
-      className="relative w-full h-[90vh] min-h-[660px] max-h-[820px] overflow-hidden bg-brand-blue-deep select-none"
+      className="relative w-full h-[50vh] sm:h-[62vh] md:h-[90vh] min-h-[340px] sm:min-h-[440px] md:min-h-[660px] max-h-[440px] sm:max-h-[540px] md:max-h-[820px] overflow-hidden bg-brand-blue-deep select-none"
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
       role="region"
@@ -205,7 +205,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEnquiry }) => {
             fill
             priority={slide.id === 2}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[center_35%] md:object-center"
           />
         </motion.div>
       </AnimatePresence>
@@ -217,7 +217,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEnquiry }) => {
       {/* Outer gutters: 10px (8–12px) from left and right viewport edges on desktop */}
       {/* Responsive on mobile/tablet (px-2.5 sm:px-3)                               */}
       {/* ========================================================================= */}
-      <div className="relative z-10 w-full h-full pt-[82px] md:pt-[110px] lg:pt-[112px] pb-14 md:pb-3 px-2.5 sm:px-3 lg:px-2.5 flex flex-col justify-between pointer-events-none">
+      <div className="relative z-10 w-full h-full pt-[70px] md:pt-[110px] lg:pt-[112px] pb-14 md:pb-3 px-2.5 sm:px-3 lg:px-2.5 flex flex-col justify-between pointer-events-none">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full h-full pointer-events-auto">
           
           {/* ========================================================================= */}
