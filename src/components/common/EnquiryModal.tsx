@@ -9,6 +9,10 @@ interface EnquiryModalProps {
   onClose: () => void;
   defaultInterestedIn?: string;
   source?: string;
+  title?: string;
+  subtitle?: string;
+  badge?: string;
+  submitButtonText?: string;
 }
 
 export const EnquiryModal: React.FC<EnquiryModalProps> = ({
@@ -16,6 +20,10 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
   onClose,
   defaultInterestedIn = 'Not Decided',
   source = 'Modal Enquiry CTA',
+  title,
+  subtitle,
+  badge,
+  submitButtonText,
 }) => {
   // Prevent background scrolling when modal is open
   useEffect(() => {
@@ -60,7 +68,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 p-1.5 sm:p-2 text-gray-400 hover:text-brand-blue hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold/50"
+          className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 p-1.5 sm:p-2 text-gray-400 hover:text-brand-blue hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold/50 cursor-pointer"
           aria-label="Close Enquiry Dialog"
         >
           <X className="w-5 h-5" />
@@ -68,8 +76,13 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
         <div className="overflow-y-auto overscroll-contain flex-1">
           <EnquiryForm
+            key={`${defaultInterestedIn}-${source}`}
             defaultInterestedIn={defaultInterestedIn}
             source={source}
+            title={title}
+            subtitle={subtitle}
+            badge={badge}
+            submitButtonText={submitButtonText}
             onSuccess={onClose}
             compact={true}
             className="border-0 shadow-none px-5 py-4 sm:px-7 sm:py-5"

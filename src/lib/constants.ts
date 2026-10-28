@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
   siteAddress: 'Sai World Dreams, Kalyan Shil Road, Dombivli, Maharashtra, India',
   corporateOffice: 'M/s. Out N Out Infotech India LLP., 1701, Satra Plaza, Plot No. 19 & 20, Sector - 19D, Vashi, Navi Mumbai.',
   phoneNumbers: ['+91 9224136478'],
-  email: 'shelterproperties78@gmail.com',
+  email: 'sheltermauryashelter@gmail.com',
   brochureDownloadUrl: '/brochure/Sai-World-Dreams-Brochure.pdf',
   // Official WhatsApp configuration with pre-filled message requirement
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '919224136478',

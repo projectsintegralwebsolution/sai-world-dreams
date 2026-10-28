@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import Link from 'next/link';
 import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 
-// Zod Schema with Indian mobile number validation
+// Zod Schema with Indian mobile number validation and optional email
 export const enquirySchema = z.object({
   fullName: z
     .string()
@@ -16,8 +16,12 @@ export const enquirySchema = z.object({
     .regex(/^[a-zA-Z\s.]+$/, { message: 'Please enter a valid full name' }),
   email: z
     .string()
-    .min(1, { message: 'Email address is required' })
-    .email({ message: 'Please enter a valid email address' }),
+    .trim()
+    .refine((val) => !val || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+      message: 'Please enter a valid email address',
+    })
+    .optional()
+    .or(z.literal('')),
   mobile: z
     .string()
     .min(1, { message: 'Mobile number is required' })
@@ -41,6 +45,10 @@ interface EnquiryFormProps {
   onSuccess?: () => void;
   className?: string;
   compact?: boolean;
+  title?: string;
+  subtitle?: string;
+  badge?: string;
+  submitButtonText?: string;
 }
 
 export const EnquiryForm: React.FC<EnquiryFormProps> = ({
@@ -49,6 +57,10 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
   onSuccess,
   className = '',
   compact = false,
+  title,
+  subtitle,
+  badge,
+  submitButtonText,
 }) => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -58,6 +70,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<EnquiryFormData>({
     resolver: zodResolver(enquirySchema),
@@ -70,6 +83,13 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
       consent: true,
     },
   });
+
+  // Keep form in sync when defaultInterestedIn prop changes
+  useEffect(() => {
+    if (defaultInterestedIn) {
+      setValue('interestedIn', defaultInterestedIn as any);
+    }
+  }, [defaultInterestedIn, setValue]);
 
   const onSubmit = async (data: EnquiryFormData) => {
     setSubmitStatus('loading');
@@ -153,13 +173,13 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
     >
       <div className={`${compact ? 'mb-3 pb-2.5 sm:mb-3.5 sm:pb-3' : 'mb-6 pb-4'} border-b border-brand-ivory-border`}>
         <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-gold-dark block mb-0.5">
-          Priority Access & Brochure
+          {badge || 'Priority Access & Brochure'}
         </span>
         <h3 className={`${compact ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'} font-bold text-brand-blue font-display`}>
-          Request a Call Back
+          {title || 'Request a Call Back'}
         </h3>
         <p className="text-xs text-gray-600 mt-0.5">
-          Register your interest to receive detailed pricing, floor plans & payment plans.
+          {subtitle || 'Register your interest to receive detailed pricing, floor plans & payment plans.'}
         </p>
       </div>
 
@@ -221,7 +241,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
               <div>
                 <label htmlFor="email" className="block text-xs font-semibold text-gray-800 uppercase tracking-wider mb-1">
-                  Email Address <span className="text-red-500">*</span>
+                  Email Address <span className="text-gray-400 font-normal lowercase">(optional)</span>
                 </label>
                 <input
                   id="email"
@@ -310,7 +330,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
               {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-xs font-semibold text-gray-800 uppercase tracking-wider mb-1">
-                  Email Address <span className="text-red-500">*</span>
+                  Email Address <span className="text-gray-400 font-normal lowercase">(optional)</span>
                 </label>
                 <input
                   id="email"
@@ -403,16 +423,10 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
           ) : (
             <>
               <Send className="w-4 h-4" />
-              <span>Submit Enquiry</span>
+              <span>{submitButtonText || 'Submit Enquiry'}</span>
             </>
           )}
         </button>
-      </div>
-
-      <div className={`${compact ? 'mt-2.5 pt-2' : 'mt-4 pt-3'} border-t border-brand-ivory-border/70 text-center`}>
-        <p className="text-[10px] text-gray-500">
-          Your information is encrypted & 100% confidential. No spam guaranteed.
-        </p>
       </div>
     </form>
   );

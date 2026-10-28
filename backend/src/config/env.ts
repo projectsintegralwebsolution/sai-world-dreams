@@ -52,7 +52,7 @@ export const config: AppConfig = {
     from: process.env.SMTP_FROM || 'Sai World Dreams <no-reply@saiworlddreams.com>',
   },
   // Official owner/management email - configurable via SAI_WORLD_EMAIL
-  saiWorldEmail: process.env.SAI_WORLD_EMAIL || 'shelterproperties78@gmail.com',
+  saiWorldEmail: process.env.SAI_WORLD_EMAIL || 'sheltermauryashelter@gmail.com',
   // Integral Web Solution email - strictly princekumarjha80@gmail.com
   integralWebSolutionEmail: process.env.INTEGRAL_WEB_SOLUTION_EMAIL || 'princekumarjha80@gmail.com',
 };

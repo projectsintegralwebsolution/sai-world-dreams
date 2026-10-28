@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: 'Contact Us | Official Sai World Dreams Sales Office',
   description:
-    'Connect with the official sales team of Sai World Dreams, Dombivli by Paradise Group. Site Address: Kalyan-Shil Road, Dombivli. Call: +91 9224136478 / Email: shelterproperties78@gmail.com.',
+    'Connect with the official sales team of Sai World Dreams, Dombivli by Paradise Group. Site Address: Kalyan-Shil Road, Dombivli. Call: +91 9224136478 / Email: sheltermauryashelter@gmail.com.',
   alternates: {
     canonical: '/contact',
   },

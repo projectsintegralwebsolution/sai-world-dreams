@@ -21,6 +21,7 @@ import {
 import { HeroSlider } from '@/components/home/HeroSlider';
 import { EnquiryForm } from '@/components/forms/EnquiryForm';
 import { AutoEnquiryPopup } from '@/components/home/AutoEnquiryPopup';
+import { ApartmentPricingSection } from '@/components/home/ApartmentPricingSection';
 import {
   SITE_CONFIG,
   PROJECT_HIGHLIGHTS,
@@ -458,7 +459,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. RESIDENCE CONFIGURATIONS: 1, 2, 2.5 & 3 BHK */}
+      {/* 5. PROJECT OVERVIEW & APARTMENT PRICING */}
+      <ApartmentPricingSection />
+
+      {/* 6. RESIDENCE CONFIGURATIONS: 1, 2, 2.5 & 3 BHK */}
       <section className="py-20 md:py-28 bg-brand-ivory relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
