@@ -493,8 +493,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEnquiry }) => {
 
           {/* ========================================================================= */}
           {/* 4. RIGHT ENQUIRY PANEL (Premium Translucent Navy & Gold, Same Height)     */}
+          {/*    Hidden on mobile (<md), preserved on tablet & desktop                  */}
           {/* ========================================================================= */}
-          <div className="w-full max-w-[285px] sm:max-w-[295px] lg:w-[280px] xl:w-[295px] shrink-0 h-full flex flex-col">
+          <div className="hidden md:flex w-full max-w-[285px] sm:max-w-[295px] lg:w-[280px] xl:w-[295px] shrink-0 h-full flex-col">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
