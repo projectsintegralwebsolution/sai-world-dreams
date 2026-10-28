@@ -17,6 +17,7 @@ interface PageBannerProps {
   objectPosition?: string;
   imageScale?: number | string;
   className?: string;
+  isHomePage?: boolean;
 }
 
 export const PageBanner: React.FC<PageBannerProps> = ({
@@ -28,6 +29,7 @@ export const PageBanner: React.FC<PageBannerProps> = ({
   objectPosition = 'center center',
   imageScale = 1.05,
   className = '',
+  isHomePage = false,
 }) => {
   const scaleStyle =
     typeof imageScale === 'number'
@@ -45,7 +47,7 @@ export const PageBanner: React.FC<PageBannerProps> = ({
     <section
       className={`relative w-full overflow-hidden inner-page-banner flex items-center pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-12 bg-brand-blue-deep ${className}`}
     >
-      {/* Background Architectural Image (Unfiltered, Edge-to-Edge) */}
+      {/* Background Architectural Image (Edge-to-Edge) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <Image
           src={imageSrc}
@@ -60,6 +62,14 @@ export const PageBanner: React.FC<PageBannerProps> = ({
           }}
           className={`w-full h-full object-cover transition-transform duration-1000 ${scaleClass}`}
         />
+        {/* Uniform 20% Dark Overlay (rgba(0, 0, 0, 0.2)) */}
+        {!isHomePage && (
+          <div
+            className="absolute inset-0 bg-black/20 pointer-events-none"
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+            aria-hidden="true"
+          />
+        )}
       </div>
 
       {/* Banner Content Container */}

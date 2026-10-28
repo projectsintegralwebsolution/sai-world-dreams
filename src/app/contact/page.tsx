@@ -159,7 +159,7 @@ export default function ContactPage() {
               </h3>
             </div>
             <a
-              href="https://maps.google.com/?q=Sai+World+Dreams+Dombivli+Kalyan+Shil+Road"
+              href="https://www.google.com/maps/place/Sai+World+Dreams/@19.1837908,73.0874225,17z/data=!3m1!4b1!4m6!3m5!1s0x3be795f26198d6a7:0x9527f38f71cc5b64!8m2!3d19.1837908!4d73.0899974!16s%2Fg%2F11wqw2r1jf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-blue text-white hover:bg-brand-blue-light text-xs font-bold uppercase tracking-wider rounded-sm transition-colors self-start"
@@ -172,7 +172,7 @@ export default function ContactPage() {
           <div className="relative aspect-[21/9] min-h-[350px] w-full rounded-xl overflow-hidden border-2 border-brand-gold/30">
             <iframe
               title="Sai World Dreams Dombivli Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.897368487926!2d73.0913!3d19.2089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795861e6f1c4b%3A0x6b8660e51fa23!2sSai%20World%20Dreams!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.835154568853!2d73.0874225!3d19.1837908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795f26198d6a7%3A0x9527f38f71cc5b64!2sSai%20World%20Dreams!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

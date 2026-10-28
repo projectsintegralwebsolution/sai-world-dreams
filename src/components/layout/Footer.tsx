@@ -1,9 +1,36 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, Building2, ExternalLink, ShieldCheck } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Building2,
+  ExternalLink,
+  ShieldCheck,
+  Home,
+  Dumbbell,
+  Trees,
+  Sparkles,
+  Crown
+} from 'lucide-react';
 import { SITE_CONFIG, NAV_LINKS, RESIDENCE_CONFIGS, AMENITIES_WORLDS } from '@/lib/constants';
 import { ProjectLogo } from '@/components/branding/ProjectLogo';
+
+const getAmenityIcon = (id: string) => {
+  switch (id) {
+    case 'nirvana':
+      return Dumbbell;
+    case 'zen':
+      return Trees;
+    case 'euphoria':
+      return Sparkles;
+    case 'clubhouse':
+      return Crown;
+    default:
+      return Sparkles;
+  }
+};
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -99,30 +126,47 @@ export const Footer: React.FC = () => {
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-gold-light border-b border-brand-gold/20 pb-2 inline-block">
               Residences & Club
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               <div>
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Apartment Types</p>
-                <ul className="space-y-1.5 text-sm text-gray-300">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                  Apartment Types
+                </p>
+                <ul className="space-y-2 text-sm text-gray-300">
                   {RESIDENCE_CONFIGS.map((c) => (
                     <li key={c.id}>
-                      <Link href={`/residences#${c.id}`} className="hover:text-brand-gold transition-colors">
-                        {c.name}
+                      <Link
+                        href={`/residences#${c.id}`}
+                        className="group flex items-start gap-2.5 text-gray-300 hover:text-brand-gold transition-colors duration-200"
+                      >
+                        <Home className="w-3.5 h-3.5 text-brand-gold/80 shrink-0 mt-0.5 group-hover:text-brand-gold group-hover:translate-x-0.5 transition-all duration-200" />
+                        <span className="leading-snug">{c.name}</span>
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-2 border-t border-white/5">
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Amenities Worlds</p>
-                <ul className="space-y-1 text-xs text-gray-300">
-                  {AMENITIES_WORLDS.map((w) => (
-                    <li key={w.id}>
-                      <Link href={`/amenities#${w.id}`} className="hover:text-brand-gold transition-colors">
-                        {w.name} ({w.theme})
-                      </Link>
-                    </li>
-                  ))}
+              <div className="pt-3 border-t border-white/10">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                  Amenities Worlds
+                </p>
+                <ul className="space-y-2 text-xs text-gray-300">
+                  {AMENITIES_WORLDS.map((w) => {
+                    const AmenityIcon = getAmenityIcon(w.id);
+                    return (
+                      <li key={w.id}>
+                        <Link
+                          href={`/amenities#${w.id}`}
+                          className="group flex items-start gap-2.5 text-gray-300 hover:text-brand-gold transition-colors duration-200"
+                        >
+                          <AmenityIcon className="w-3.5 h-3.5 text-brand-gold/80 shrink-0 mt-0.5 group-hover:text-brand-gold group-hover:translate-x-0.5 transition-all duration-200" />
+                          <span className="leading-snug">
+                            {w.name} ({w.theme})
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

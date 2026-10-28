@@ -41,11 +41,6 @@ interface HeroSlide {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 1,
-    image: '/images/hero/hero-slide-1.webp',
-    alt: 'Sai World Dreams Dombivli Grand Architectural Elevation',
-  },
-  {
     id: 2,
     image: '/images/hero/hero-slide-2.webp',
     alt: 'Sai World Dreams 6-Acre Landscaped Podium & Club',
@@ -208,7 +203,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEnquiry }) => {
             src={slide.image}
             alt={slide.alt}
             fill
-            priority={slide.id === 1}
+            priority={slide.id === 2}
             sizes="100vw"
             className="object-cover object-center"
           />
@@ -222,14 +217,15 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onOpenEnquiry }) => {
       {/* Outer gutters: 10px (8–12px) from left and right viewport edges on desktop */}
       {/* Responsive on mobile/tablet (px-2.5 sm:px-3)                               */}
       {/* ========================================================================= */}
-      <div className="relative z-10 w-full h-full pt-[82px] md:pt-[110px] lg:pt-[112px] pb-3 px-2.5 sm:px-3 lg:px-2.5 flex flex-col justify-between pointer-events-none">
+      <div className="relative z-10 w-full h-full pt-[82px] md:pt-[110px] lg:pt-[112px] pb-14 md:pb-3 px-2.5 sm:px-3 lg:px-2.5 flex flex-col justify-between pointer-events-none">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full h-full pointer-events-auto">
           
           {/* ========================================================================= */}
           {/* 3. LEFT PROMOTIONAL PANEL (Redesigned per Reference: Deep Navy, Gold,     */}
           {/*    Stats Grid, 3 Feature Cards w/ Photos & Chevrons, Ivory Price, RERA)   */}
+          {/*    Hidden on mobile (<md), preserved on tablet & desktop                  */}
           {/* ========================================================================= */}
-          <div className="w-full max-w-[285px] sm:max-w-[295px] lg:w-[280px] xl:w-[295px] shrink-0 h-full flex flex-col">
+          <div className="hidden md:flex w-full max-w-[285px] sm:max-w-[295px] lg:w-[280px] xl:w-[295px] shrink-0 h-full flex-col">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
