@@ -292,45 +292,51 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* DUAL RERA AGENT CARDS: Company Advertiser vs Individual Agent */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* 1. Government RERA-Authorised Advertiser (Company) */}
-            <div className="bg-white/5 border border-brand-gold/25 hover:border-brand-gold/50 rounded-lg p-5 flex flex-col justify-between space-y-4 transition-colors">
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-gold-light bg-brand-gold/15 px-2.5 py-1 rounded border border-brand-gold/30">
-                    Government RERA Authorised Advertiser (Company)
-                  </span>
-                  <span className="text-[10px] text-gray-400 font-mono">CIN: U70109MH2022PTC380829</span>
-                </div>
-                <h4 className="text-sm sm:text-base font-bold text-white font-display mt-2">
-                  Shree Salasar Balaji Property Advisor Private Limited
-                </h4>
-                <div className="mt-3.5 space-y-2 text-xs text-gray-300">
-                  <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">MahaRERA Agent No.:</span>
-                    <strong className="text-brand-gold font-mono font-bold">A51700042996</strong>
-                  </p>
-                  <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">Corporate Identity No.:</span>
-                    <span className="text-white font-mono">U70109MH2022PTC380829</span>
-                  </p>
-                  <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">Entity Nature:</span>
-                    <span className="text-white font-medium">Authorised Marketing Partner / Company</span>
-                  </p>
-                  <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">Registered Office:</span>
-                    <span className="text-gray-200">
-                      1701, Satra Plaza, Plot No. 19 & 20, Sector - 19D, Vashi, Navi Mumbai, Maharashtra 400703
-                    </span>
-                  </p>
-                </div>
-              </div>
+          {/* LEGAL INFORMATION CHECKMARK CARD & INDIVIDUAL AGENT CERTIFICATE CARD */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-stretch">
+            {/* 1. Government RERA Authorised Advertiser Details Card */}
+            <div className="bg-white/5 border border-brand-gold/40 hover:border-brand-gold rounded-lg p-5 flex flex-col justify-center transition-colors shadow-lg">
+              <ul className="space-y-3 text-xs sm:text-sm text-gray-200">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-brand-gold font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                  <div>
+                    <strong className="text-white font-semibold">Project Registration:</strong>{' '}
+                    <span>Project Registered under Government of India RERA Act 2016.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-brand-gold font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                  <div>
+                    <strong className="text-white font-semibold">Official Website:</strong>{' '}
+                    <a
+                      href="https://maharera.maharashtra.gov.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-gold hover:underline break-all font-medium"
+                    >
+                      https://maharera.maharashtra.gov.in
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-brand-gold font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                  <div>
+                    <strong className="text-white font-semibold">Government RERA Authorised Advertiser:</strong>{' '}
+                    <span className="text-gray-100 font-medium">Rahul Kumar Maurya Property Adviser</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-brand-gold font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span>
+                  <div>
+                    <strong className="text-white font-semibold">MAHA RERA Agent Registration No.:</strong>{' '}
+                    <span className="font-mono text-brand-gold-light font-semibold">A51700042996</span>
+                  </div>
+                </li>
+              </ul>
             </div>
 
             {/* 2. MahaRERA Authorised Real Estate Agent (Individual - Rahul Kumar Maurya) */}
-            <div className="bg-white/5 border border-brand-gold/40 hover:border-brand-gold rounded-lg p-5 flex flex-col justify-between space-y-4 transition-colors relative overflow-hidden shadow-lg">
+            <div className="bg-white/5 border border-brand-gold/40 hover:border-brand-gold rounded-lg p-5 flex flex-col justify-between space-y-3.5 transition-colors relative overflow-hidden shadow-lg">
               <div className="absolute top-0 right-0 w-28 h-28 bg-brand-gold/10 rounded-full blur-xl pointer-events-none" />
 
               <div>
@@ -338,35 +344,24 @@ export const Footer: React.FC = () => {
                   <span className="text-[10px] font-bold uppercase tracking-wider text-brand-gold bg-brand-gold/25 px-2.5 py-1 rounded border border-brand-gold/50">
                     MahaRERA Registered Agent (Individual)
                   </span>
-                  <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Form &apos;H&apos; Certified
-                  </span>
                 </div>
                 <h4 className="text-base sm:text-lg font-bold text-white font-display mt-2">
                   Rahul Kumar Maurya
                 </h4>
-                <div className="mt-3.5 space-y-2 text-xs text-gray-300">
+                <div className="mt-3 space-y-2 text-xs text-gray-300">
                   <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">MahaRERA Agent No.:</span>
+                    <span className="text-gray-400 min-w-[145px]">MahaRERA Agent No.:</span>
                     <strong className="text-brand-gold-light font-mono font-bold text-sm">A011332602985</strong>
                   </p>
                   <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">Agent Type:</span>
+                    <span className="text-gray-400 min-w-[145px]">Agent Type:</span>
                     <span className="text-white font-semibold">Individual</span>
-                  </p>
-                  <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">Registration Validity:</span>
-                    <span className="text-white font-medium">24 July 2026 to 23 July 2031 (24/07/2026 – 23/07/2031)</span>
-                  </p>
-                  <p className="flex items-start gap-1.5">
-                    <span className="text-gray-400 min-w-[155px]">Principal Place:</span>
-                    <span className="text-gray-200">Taluka: Ambarnath, District: Thane, Pincode: 421503</span>
                   </p>
                 </div>
               </div>
 
               {/* View & Download Certificate Actions */}
-              <div className="pt-3.5 border-t border-white/10 flex flex-wrap items-center gap-2.5">
+              <div className="pt-3 border-t border-white/10 flex flex-wrap items-center gap-2.5">
                 <a
                   href="/documents/rahul-kumar-maurya-rera-certificate.pdf"
                   target="_blank"
