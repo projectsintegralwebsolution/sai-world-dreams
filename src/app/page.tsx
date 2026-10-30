@@ -847,12 +847,23 @@ export default function HomePage() {
 
               <div className="p-4 bg-brand-blue-deep text-white rounded-md border border-brand-gold/30">
                 <p className="text-xs text-gray-300">Need Immediate Assistance?</p>
-                <a
-                  href="tel:+919224136478"
-                  className="text-lg font-bold text-brand-gold-light mt-0.5 block hover:text-white transition-colors"
-                >
-                  Call {SITE_CONFIG.phoneNumbers[0]}
-                </a>
+                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 mt-1 text-base sm:text-lg font-bold text-brand-gold-light">
+                  <a
+                    href={`tel:${SITE_CONFIG.phoneNumbers[0].replace(/\s+/g, '')}`}
+                    className="hover:text-white transition-colors"
+                    title={`Call ${SITE_CONFIG.phoneNumbers[0]}`}
+                  >
+                    Call {SITE_CONFIG.phoneNumbers[0]}
+                  </a>
+                  <span className="text-white/40 text-sm font-normal">/</span>
+                  <a
+                    href={`tel:${SITE_CONFIG.phoneNumbers[1].replace(/\s+/g, '')}`}
+                    className="hover:text-white transition-colors"
+                    title={`Call ${SITE_CONFIG.phoneNumbers[1]}`}
+                  >
+                    {SITE_CONFIG.phoneNumbers[1]}
+                  </a>
+                </div>
               </div>
             </div>
 

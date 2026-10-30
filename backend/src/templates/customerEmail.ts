@@ -41,8 +41,8 @@ Thank you for your interest in Sai World Dreams.
 Best regards,
 Sai World Dreams Team
 Site Address: Kalyan-Shil Road, Dombivli
-Sales Contact: +91 9224136478
-MahaRERA No: P51700035191
+Sales Contact: +91 9373910844 / +91 9224136478
+MahaRERA No: P52000033880 | P52000045371 | P52000046738
   `.trim();
 
   const html = `
@@ -132,8 +132,8 @@ MahaRERA No: P51700035191
     <div class="footer">
       <strong>Sai World Dreams &bull; Sales Gallery</strong><br>
       Kalyan-Shil Road, Dombivli, Maharashtra, India<br>
-      Sales Hotline: <a href="tel:+919224136478">+91 9224136478</a> &bull; Email: <a href="mailto:sheltermauryashelter@gmail.com">sheltermauryashelter@gmail.com</a><br>
-      MahaRERA Registration No: <strong>P51700035191</strong>
+      Sales Hotline: <a href="tel:+919373910844">+91 9373910844</a> &bull; <a href="tel:+919224136478">+91 9224136478</a> &bull; Email: <a href="mailto:sheltermauryashelter@gmail.com">sheltermauryashelter@gmail.com</a><br>
+      MahaRERA Registration No: <strong>P52000033880 | P52000045371 | P52000046738</strong>
     </div>
   </div>
 </body>

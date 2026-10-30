@@ -50,20 +50,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
               <span className="text-white/20">•</span>
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3 h-3 text-brand-gold shrink-0" />
-                <span>MahaRERA: <strong className="text-brand-gold font-semibold">{SITE_CONFIG.reraNumber}</strong></span>
+                <span>MahaRERA: <strong className="text-brand-gold font-semibold">P52000033880 | P52000045371 | P52000046738</strong></span>
               </span>
             </div>
 
             {/* Clickable verified telephone & brochure links */}
-            <div className="flex items-center gap-4">
-              <a
-                href="tel:+919224136478"
-                className="flex items-center gap-1.5 text-gray-200 hover:text-brand-gold transition-colors font-medium"
-                title={`Call Sales Office: ${SITE_CONFIG.phoneNumbers[0]}`}
-              >
-                <Phone className="w-3 h-3 text-brand-gold" />
-                <span>Call: {SITE_CONFIG.phoneNumbers[0]}</span>
-              </a>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1.5 text-gray-200">
+                <Phone className="w-3 h-3 text-brand-gold shrink-0" />
+                <span className="text-gray-300">Call:</span>
+                <a
+                  href={`tel:${SITE_CONFIG.phoneNumbers[0].replace(/\s+/g, '')}`}
+                  className="text-gray-200 hover:text-brand-gold transition-colors font-medium"
+                  title={`Call Sales Office: ${SITE_CONFIG.phoneNumbers[0]}`}
+                >
+                  {SITE_CONFIG.phoneNumbers[0]}
+                </a>
+                <span className="text-white/30">/</span>
+                <a
+                  href={`tel:${SITE_CONFIG.phoneNumbers[1].replace(/\s+/g, '')}`}
+                  className="text-gray-200 hover:text-brand-gold transition-colors font-medium"
+                  title={`Call Sales Office: ${SITE_CONFIG.phoneNumbers[1]}`}
+                >
+                  {SITE_CONFIG.phoneNumbers[1]}
+                </a>
+              </div>
               <span className="text-white/20">•</span>
               <a
                 href={SITE_CONFIG.brochureDownloadUrl}
@@ -131,7 +142,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
                 {/* Mobile Hamburger & Quick Call Action */}
                 <div className="flex items-center gap-2 lg:hidden">
                   <a
-                    href="tel:+919224136478"
+                    href={`tel:${SITE_CONFIG.phoneNumbers[0].replace(/\s+/g, '')}`}
                     className="p-1.5 text-gray-200 hover:text-brand-gold"
                     aria-label={`Call Sales: ${SITE_CONFIG.phoneNumbers[0]}`}
                   >
@@ -236,17 +247,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry }) => {
               <span>Download PDF Brochure</span>
             </a>
 
-            <a
-              href="tel:+919224136478"
-              className="w-full flex items-center justify-center gap-2 py-2.5 bg-white/5 hover:bg-white/10 text-gray-200 text-xs font-semibold rounded-sm transition-colors"
-            >
-              <Phone className="w-4 h-4 text-brand-gold" />
-              <span>Call: {SITE_CONFIG.phoneNumbers[0]}</span>
-            </a>
+            <div className="grid grid-cols-1 gap-2">
+              <a
+                href={`tel:${SITE_CONFIG.phoneNumbers[0].replace(/\s+/g, '')}`}
+                className="w-full flex items-center justify-center gap-2 py-2.5 bg-white/5 hover:bg-white/10 text-gray-200 text-xs font-semibold rounded-sm transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+                <span>Call: {SITE_CONFIG.phoneNumbers[0]}</span>
+              </a>
+              <a
+                href={`tel:${SITE_CONFIG.phoneNumbers[1].replace(/\s+/g, '')}`}
+                className="w-full flex items-center justify-center gap-2 py-2.5 bg-white/5 hover:bg-white/10 text-gray-200 text-xs font-semibold rounded-sm transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+                <span>Call: {SITE_CONFIG.phoneNumbers[1]}</span>
+              </a>
+            </div>
 
             <div className="text-center pt-2">
               <p className="text-[10px] text-gray-400">
-                MahaRERA: <span className="text-brand-gold font-semibold">{SITE_CONFIG.reraNumber}</span>
+                MahaRERA: <span className="text-brand-gold font-semibold">P52000033880 | P52000045371 | P52000046738</span>
               </p>
             </div>
           </div>

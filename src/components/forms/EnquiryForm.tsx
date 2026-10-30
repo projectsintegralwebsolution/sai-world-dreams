@@ -372,23 +372,6 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
           </>
         )}
 
-        {/* Message */}
-        <div>
-          <label htmlFor="message" className="block text-xs font-semibold text-gray-800 uppercase tracking-wider mb-1">
-            Message / Specific Requirements (Optional)
-          </label>
-          <textarea
-            id="message"
-            rows={compact ? 2 : 3}
-            placeholder="Mention preferred tower, floor preference, or preferred visit date..."
-            {...register('message')}
-            className={`w-full px-3.5 ${compact ? 'py-1.5 h-14 sm:h-16' : 'py-2'} text-sm bg-white border border-gray-300 rounded-sm transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold resize-none`}
-          />
-          {errors.message && (
-            <p className="text-[11px] text-red-600 mt-0.5">{errors.message.message}</p>
-          )}
-        </div>
-
         {/* Consent Checkbox */}
         <div>
           <label className="flex items-start gap-2.5 cursor-pointer">

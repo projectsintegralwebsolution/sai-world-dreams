@@ -12,7 +12,10 @@ import {
   Dumbbell,
   Trees,
   Sparkles,
-  Crown
+  Crown,
+  Download,
+  CheckCircle2,
+  FileText
 } from 'lucide-react';
 import { SITE_CONFIG, NAV_LINKS, RESIDENCE_CONFIGS, AMENITIES_WORLDS } from '@/lib/constants';
 import { ProjectLogo } from '@/components/branding/ProjectLogo';
@@ -192,15 +195,26 @@ export const Footer: React.FC = () => {
                   <span>{SITE_CONFIG.corporateOffice}</span>
                 </div>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-brand-gold shrink-0" />
-                <div>
-                  <a
-                    href="tel:+919224136478"
-                    className="hover:text-brand-gold transition-colors block text-white font-medium"
-                  >
-                    {SITE_CONFIG.phoneNumbers[0]}
-                  </a>
+              <li className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <strong className="block text-white font-medium">Sales Helpline:</strong>
+                  <div className="flex flex-col gap-0.5">
+                    <a
+                      href={`tel:${SITE_CONFIG.phoneNumbers[0].replace(/\s+/g, '')}`}
+                      className="hover:text-brand-gold transition-colors block text-gray-200 font-medium"
+                      title={`Call ${SITE_CONFIG.phoneNumbers[0]}`}
+                    >
+                      {SITE_CONFIG.phoneNumbers[0]}
+                    </a>
+                    <a
+                      href={`tel:${SITE_CONFIG.phoneNumbers[1].replace(/\s+/g, '')}`}
+                      className="hover:text-brand-gold transition-colors block text-gray-200 font-medium"
+                      title={`Call ${SITE_CONFIG.phoneNumbers[1]}`}
+                    >
+                      {SITE_CONFIG.phoneNumbers[1]}
+                    </a>
+                  </div>
                 </div>
               </li>
               <li className="flex items-center gap-2.5">
@@ -216,38 +230,184 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* MahaRERA & Statutory Disclaimer Section */}
-        <div className="py-8 border-b border-white/10 space-y-4">
-          <div className="bg-brand-blue/50 border border-brand-gold/25 rounded-md p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="w-8 h-8 text-brand-gold shrink-0" />
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-white">
-                  MahaRERA Registration No. <span className="text-brand-gold">{SITE_CONFIG.reraNumber}</span>
-                </p>
-                <p className="text-[11px] text-gray-300">
-                  Available on website:{' '}
-                  <a
-                    href={SITE_CONFIG.reraUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand-gold hover:underline inline-flex items-center gap-1"
-                  >
-                    <span>{SITE_CONFIG.reraUrl}</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>{' '}
-                  under registered projects.
-                </p>
-              </div>
+        {/* ========================================================================= */}
+        {/* LEGAL INFORMATION & MAHARERA STATUTORY COMPLIANCE                         */}
+        {/* ========================================================================= */}
+        <div id="legal-information" className="py-10 border-b border-white/10 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-brand-gold shrink-0" />
+              <h3 className="text-sm sm:text-base font-bold font-display uppercase tracking-wider text-white">
+                Legal Information
+              </h3>
             </div>
-            <div className="text-xs text-gray-400 md:text-right">
+            <p className="text-xs text-gray-300">
+              Project Registered under Government of India RERA Act, 2016
+            </p>
+          </div>
+
+          {/* Project RERA Banner */}
+          <div className="bg-brand-blue/60 border border-brand-gold/30 rounded-lg p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[11px] uppercase font-bold tracking-wider text-brand-gold">
+                  Project MahaRERA Registration Numbers:
+                </span>
+                <span className="px-2.5 py-0.5 bg-brand-gold/20 text-brand-gold-light text-xs font-bold rounded font-mono">
+                  P52000033880
+                </span>
+                <span className="text-gray-400">•</span>
+                <span className="px-2.5 py-0.5 bg-brand-gold/20 text-brand-gold-light text-xs font-bold rounded font-mono">
+                  P52000045371
+                </span>
+                <span className="text-gray-400">•</span>
+                <span className="px-2.5 py-0.5 bg-brand-gold/20 text-brand-gold-light text-xs font-bold rounded font-mono">
+                  P52000046738
+                </span>
+              </div>
+              <p className="text-xs text-gray-300">
+                Registration details can be viewed on the official MahaRERA website:{' '}
+                <a
+                  href="https://maharera.maharashtra.gov.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-gold hover:underline inline-flex items-center gap-1 font-semibold"
+                >
+                  <span>maharera.maharashtra.gov.in</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>{' '}
+                <span className="text-gray-400">|</span>{' '}
+                <a
+                  href="https://maharera.mahaonline.gov.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-brand-gold inline-flex items-center gap-1 text-[11px]"
+                >
+                  <span>maharera.mahaonline.gov.in</span>
+                </a>
+              </p>
+            </div>
+            <div className="text-xs text-gray-300 md:text-right shrink-0">
               Project Financed By: <strong className="text-white font-semibold">{SITE_CONFIG.financedBy}</strong>
             </div>
           </div>
 
-          <p className="text-[11px] text-gray-400 leading-relaxed text-justify">
-            <strong>Disclaimer:</strong> All the specification, design, facilities, dimensions, etc. are subject to the approval of the respective authorities & developers and would be changed if necessary. The discretion remains with the developers. Rendered images, artists’ impressions and representations are indicative and intended for illustrative purposes only.
-          </p>
+          {/* DUAL RERA AGENT CARDS: Company Advertiser vs Individual Agent */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* 1. Government RERA-Authorised Advertiser (Company) */}
+            <div className="bg-white/5 border border-brand-gold/25 hover:border-brand-gold/50 rounded-lg p-5 flex flex-col justify-between space-y-4 transition-colors">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-gold-light bg-brand-gold/15 px-2.5 py-1 rounded border border-brand-gold/30">
+                    Government RERA Authorised Advertiser (Company)
+                  </span>
+                  <span className="text-[10px] text-gray-400 font-mono">CIN: U70109MH2022PTC380829</span>
+                </div>
+                <h4 className="text-sm sm:text-base font-bold text-white font-display mt-2">
+                  Shree Salasar Balaji Property Advisor Private Limited
+                </h4>
+                <div className="mt-3.5 space-y-2 text-xs text-gray-300">
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">MahaRERA Agent No.:</span>
+                    <strong className="text-brand-gold font-mono font-bold">A51700042996</strong>
+                  </p>
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">Corporate Identity No.:</span>
+                    <span className="text-white font-mono">U70109MH2022PTC380829</span>
+                  </p>
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">Entity Nature:</span>
+                    <span className="text-white font-medium">Authorised Marketing Partner / Company</span>
+                  </p>
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">Registered Office:</span>
+                    <span className="text-gray-200">
+                      1701, Satra Plaza, Plot No. 19 & 20, Sector - 19D, Vashi, Navi Mumbai, Maharashtra 400703
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. MahaRERA Authorised Real Estate Agent (Individual - Rahul Kumar Maurya) */}
+            <div className="bg-white/5 border border-brand-gold/40 hover:border-brand-gold rounded-lg p-5 flex flex-col justify-between space-y-4 transition-colors relative overflow-hidden shadow-lg">
+              <div className="absolute top-0 right-0 w-28 h-28 bg-brand-gold/10 rounded-full blur-xl pointer-events-none" />
+
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-gold bg-brand-gold/25 px-2.5 py-1 rounded border border-brand-gold/50">
+                    MahaRERA Registered Agent (Individual)
+                  </span>
+                  <span className="text-[10px] text-emerald-400 font-semibold flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Form &apos;H&apos; Certified
+                  </span>
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-white font-display mt-2">
+                  Rahul Kumar Maurya
+                </h4>
+                <div className="mt-3.5 space-y-2 text-xs text-gray-300">
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">MahaRERA Agent No.:</span>
+                    <strong className="text-brand-gold-light font-mono font-bold text-sm">A011332602985</strong>
+                  </p>
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">Agent Type:</span>
+                    <span className="text-white font-semibold">Individual</span>
+                  </p>
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">Registration Validity:</span>
+                    <span className="text-white font-medium">24 July 2026 to 23 July 2031 (24/07/2026 – 23/07/2031)</span>
+                  </p>
+                  <p className="flex items-start gap-1.5">
+                    <span className="text-gray-400 min-w-[155px]">Principal Place:</span>
+                    <span className="text-gray-200">Taluka: Ambarnath, District: Thane, Pincode: 421503</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* View & Download Certificate Actions */}
+              <div className="pt-3.5 border-t border-white/10 flex flex-wrap items-center gap-2.5">
+                <a
+                  href="/documents/rahul-kumar-maurya-rera-certificate.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-brand-gold to-brand-gold-dark hover:from-brand-gold-light hover:to-brand-gold text-brand-blue-deep text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm"
+                  title="View Rahul Kumar Maurya MahaRERA Certificate in new browser tab"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>View RERA Agent Certificate</span>
+                  <ExternalLink className="w-3 h-3 ml-0.5" />
+                </a>
+                <a
+                  href="/documents/rahul-kumar-maurya-rera-certificate.pdf"
+                  download="Rahul-Kumar-Maurya-RERA-Certificate.pdf"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold rounded-sm transition-colors border border-white/20"
+                  title="Download Certificate PDF"
+                >
+                  <Download className="w-3.5 h-3.5 text-brand-gold" />
+                  <span>Download RERA Certificate</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Statutory Disclaimer & Advisory */}
+          <div className="p-4 bg-black/35 rounded-lg border border-white/10 space-y-2">
+            <h5 className="text-[11px] font-bold uppercase tracking-wider text-gray-300">
+              Disclaimer
+            </h5>
+            <p className="text-[11px] text-gray-400 leading-relaxed text-justify">
+              This website serves as an informational platform and is not an official site. We are an authorized marketing partner for this project, and the content provided is by the respective owners for informational purposes only, not constituting any offer of services. Prices, availability, and information are subject to change without prior notice. Images are representational and artists&apos; impressions that may differ from actual properties. Data collected may be shared with RERA-registered developers, and you may receive updates via calls, SMS, or emails based on the details registered with us. Content is protected by copyright, unauthorized use is prohibited. Registration details can be viewed on the official MahaRERA website:{' '}
+              <a
+                href="https://maharera.maharashtra.gov.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-gold hover:underline"
+              >
+                maharera.maharashtra.gov.in
+              </a>.
+            </p>
+          </div>
         </div>
 
         {/* Bottom Bar: Copyright & Exact Developer Credit */}

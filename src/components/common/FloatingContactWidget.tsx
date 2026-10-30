@@ -14,7 +14,9 @@ export const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({ on
   const cleanNumber = SITE_CONFIG.whatsappNumber.replace(/[^0-9]/g, '');
   const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
   const primaryPhone = SITE_CONFIG.phoneNumbers[0];
-  const telHref = 'tel:+919224136478';
+  const secondaryPhone = SITE_CONFIG.phoneNumbers[1] || primaryPhone;
+  const telHref = `tel:${primaryPhone.replace(/\s+/g, '')}`;
+  const telHref2 = `tel:${secondaryPhone.replace(/\s+/g, '')}`;
 
   return (
     <aside
@@ -22,26 +24,41 @@ export const FloatingContactWidget: React.FC<FloatingContactWidgetProps> = ({ on
       aria-label="Quick Contact & Enquiry Actions"
     >
       {/* ========================================================================= */}
-      {/* 1. CALL BUTTON (Closed by default, opens to left on hover)                */}
+      {/* 1. CALL BUTTON (Closed by default, opens both numbers to left on hover)    */}
       {/* ========================================================================= */}
-      <a
-        href={telHref}
+      <div
         className="group flex items-center shadow-lg transition-all duration-300 cursor-pointer overflow-hidden"
-        aria-label={`Call Sales Team: ${primaryPhone}`}
-        title={`Call: ${primaryPhone}`}
+        aria-label="Call Sales Team"
       >
-        {/* Slide-out telephone label on hover (hidden by default, opens on hover) */}
-        <div className="max-w-0 opacity-0 px-0 group-hover:max-w-[190px] group-hover:opacity-100 group-hover:px-3 h-11 sm:h-12 bg-brand-blue-deep border-y border-l border-brand-gold/40 rounded-l-md flex items-center justify-center transition-all duration-300 ease-in-out overflow-hidden">
-          <span className="text-xs font-semibold text-white whitespace-nowrap">
+        {/* Slide-out telephone numbers on hover (hidden by default, opens on hover) */}
+        <div className="max-w-0 opacity-0 px-0 group-hover:max-w-[340px] group-hover:opacity-100 group-hover:px-3 h-11 sm:h-12 bg-brand-blue-deep border-y border-l border-brand-gold/40 rounded-l-md flex items-center justify-center gap-2 transition-all duration-300 ease-in-out overflow-hidden">
+          <a
+            href={telHref}
+            className="text-xs font-semibold text-white hover:text-brand-gold whitespace-nowrap transition-colors"
+            title={`Call: ${primaryPhone}`}
+          >
             {primaryPhone}
-          </span>
+          </a>
+          <span className="text-white/30 text-xs">/</span>
+          <a
+            href={telHref2}
+            className="text-xs font-semibold text-white hover:text-brand-gold whitespace-nowrap transition-colors"
+            title={`Call: ${secondaryPhone}`}
+          >
+            {secondaryPhone}
+          </a>
         </div>
 
         {/* Icon button square (docked to right edge) */}
-        <div className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-brand-blue-deep text-brand-gold group-hover:text-brand-gold-light group-hover:bg-brand-blue border border-r-0 border-brand-gold/40 rounded-l-md group-hover:rounded-l-none transition-all duration-300 shrink-0">
+        <a
+          href={telHref}
+          className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-brand-blue-deep text-brand-gold group-hover:text-brand-gold-light group-hover:bg-brand-blue border border-r-0 border-brand-gold/40 rounded-l-md group-hover:rounded-l-none transition-all duration-300 shrink-0"
+          aria-label={`Call Sales Team: ${primaryPhone}`}
+          title={`Call: ${primaryPhone}`}
+        >
           <Phone className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-        </div>
-      </a>
+        </a>
+      </div>
 
       {/* ========================================================================= */}
       {/* 2. ENQUIRY BUTTON (Closed by default, opens white Enquiry tab on hover)   */}

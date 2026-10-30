@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | Sai World Dreams, Dombivli',
   },
   description:
-    'Sai World Dreams, Dombivli — An 18-Acre Global Lifestyle Township by Paradise Group on Kalyan-Shil Road. Offering 1, 2, 2.5 & 3 BHK luxury residences, 8 G+35 towers, 6-acre themed podium, high-street shopping boulevard and 5-star hotel. MahaRERA P51700035191.',
+    'Sai World Dreams, Dombivli — An 18-Acre Global Lifestyle Township by Paradise Group on Kalyan-Shil Road. Offering 1, 2, 2.5 & 3 BHK luxury residences, 8 G+35 towers, 6-acre themed podium, high-street shopping boulevard and 5-star hotel. MahaRERA P52000033880, P52000045371, P52000046738.',
   keywords: [
     'Sai World Dreams Dombivli',
     'Residential project in Dombivli',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sai World Dreams Dombivli | 18-Acre Global Lifestyle Township',
     description:
-      'Discover Dubai-inspired luxury living at Sai World Dreams, Dombivli. 8 G+35 storey towers, 6-acre podium, high-street shopping, business park & hotel. MahaRERA P51700035191.',
+      'Discover Dubai-inspired luxury living at Sai World Dreams, Dombivli. 8 G+35 storey towers, 6-acre podium, high-street shopping, business park & hotel. MahaRERA P52000033880, P52000045371, P52000046738.',
     url: SITE_CONFIG.url,
     siteName: 'Sai World Dreams Dombivli',
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sai World Dreams Dombivli | Luxury Residences by Paradise Group',
     description:
-      'Experience 1, 2, 2.5 & 3 BHK luxury homes with 60+ world-class amenities at Sai World Dreams, Dombivli. MahaRERA P51700035191.',
+      'Experience 1, 2, 2.5 & 3 BHK luxury homes with 60+ world-class amenities at Sai World Dreams, Dombivli. MahaRERA P52000033880, P52000045371, P52000046738.',
     images: ['/images/hero/hero-slide-2.webp'],
   },
   icons: {
@@ -106,7 +106,7 @@ export default function RootLayout({
           latitude: '19.2094',
           longitude: '73.0939',
         },
-        telephone: '+91 9224136478',
+        telephone: ['+91 9373910844', '+91 9224136478'],
       },
       {
         '@type': 'Organization',
@@ -117,7 +117,7 @@ export default function RootLayout({
         description: 'Paradise Group - 32+ Years of Real Estate Excellence across Navi Mumbai & Mumbai.',
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+91 9224136478',
+          telephone: ['+91 9373910844', '+91 9224136478'],
           contactType: 'sales',
           areaServed: 'IN',
           availableLanguage: ['en', 'hi', 'mr'],

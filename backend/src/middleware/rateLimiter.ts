@@ -7,6 +7,6 @@ export const enquiryRateLimiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
   message: {
     success: false,
-    message: 'Too many enquiry requests received from this network. Please wait a few minutes or call our sales line directly at +91 9224136478.',
+    message: 'Too many enquiry requests received from this network. Please wait a few minutes or call our sales line directly at +91 9373910844 / +91 9224136478.',
   },
 });

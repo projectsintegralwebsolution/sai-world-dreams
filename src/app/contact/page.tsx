@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: 'Contact Us | Official Sai World Dreams Sales Office',
   description:
-    'Connect with the official sales team of Sai World Dreams, Dombivli by Paradise Group. Site Address: Kalyan-Shil Road, Dombivli. Call: +91 9224136478 / Email: sheltermauryashelter@gmail.com.',
+    'Connect with the official sales team of Sai World Dreams, Dombivli by Paradise Group. Site Address: Kalyan-Shil Road, Dombivli. Call: +91 9373910844 / +91 9224136478 | Email: sheltermauryashelter@gmail.com.',
   alternates: {
     canonical: '/contact',
   },
@@ -86,18 +86,32 @@ export default function ContactPage() {
 
               {/* Phone & Email Card */}
               <div className="bg-white p-6 rounded-lg border border-brand-gold/30 space-y-4">
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <div className="flex items-center gap-2 text-brand-blue font-bold text-sm">
                     <Phone className="w-4 h-4 text-brand-gold shrink-0" />
-                    <span>Official Mobile Number</span>
+                    <span>Official Mobile Numbers</span>
                   </div>
-                  <div className="pl-6 text-xs text-gray-700 space-y-1">
-                    <a
-                      href="tel:+919224136478"
-                      className="block font-bold text-brand-blue hover:text-brand-gold transition-colors text-sm"
-                    >
-                      {SITE_CONFIG.phoneNumbers[0]}
-                    </a>
+                  <div className="pl-6 space-y-2 text-xs">
+                    <div>
+                      <span className="text-gray-500 font-medium block text-[11px]">Sales & Enquiries:</span>
+                      <a
+                        href={`tel:${SITE_CONFIG.phoneNumbers[0].replace(/\s+/g, '')}`}
+                        className="font-bold text-brand-blue hover:text-brand-gold transition-colors text-sm inline-block"
+                        title={`Call ${SITE_CONFIG.phoneNumbers[0]}`}
+                      >
+                        {SITE_CONFIG.phoneNumbers[0]}
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-gray-500 font-medium block text-[11px]">Direct Helpline:</span>
+                      <a
+                        href={`tel:${SITE_CONFIG.phoneNumbers[1].replace(/\s+/g, '')}`}
+                        className="font-bold text-brand-blue hover:text-brand-gold transition-colors text-sm inline-block"
+                        title={`Call ${SITE_CONFIG.phoneNumbers[1]}`}
+                      >
+                        {SITE_CONFIG.phoneNumbers[1]}
+                      </a>
+                    </div>
                   </div>
                 </div>
 

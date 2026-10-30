@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
               <p className="mt-2">
                 You may at any time request the review, update, or deletion of your personal information from our CRM, or unsubscribe 
                 from marketing notifications, by contacting us at <strong>{SITE_CONFIG.email}</strong> or calling{' '}
-                <strong>{SITE_CONFIG.phoneNumbers[0]}</strong>.
+                <strong>{SITE_CONFIG.phoneNumbers[0]}</strong> / <strong>{SITE_CONFIG.phoneNumbers[1]}</strong>.
               </p>
             </div>
 
