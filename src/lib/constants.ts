@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   reraUrl: 'https://maharera.maharashtra.gov.in',
   reraPortalAltUrl: 'https://maharera.mahaonline.gov.in',
   reraAuthorisedAdvertiser: 'Rahul Kumar Maurya Property Adviser',
-  reraAgentRegistrationNo: 'A51700042996',
+  reraAgentRegistrationNo: 'A011332602985',
   individualAgent: {
     name: 'Rahul Kumar Maurya',
     reraNumber: 'A011332602985',

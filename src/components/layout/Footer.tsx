@@ -329,7 +329,7 @@ export const Footer: React.FC = () => {
                   <span className="text-brand-gold font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span>
                   <div>
                     <strong className="text-white font-semibold">MAHA RERA Agent Registration No.:</strong>{' '}
-                    <span className="font-mono text-brand-gold-light font-semibold">A51700042996</span>
+                    <span className="font-mono text-brand-gold-light font-semibold">A011332602985</span>
                   </div>
                 </li>
               </ul>
